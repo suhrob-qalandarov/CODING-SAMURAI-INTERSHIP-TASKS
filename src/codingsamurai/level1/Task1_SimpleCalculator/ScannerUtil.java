@@ -1,4 +1,4 @@
-package Task1_SimpleCalculator;
+package codingsamurai.level1.Task1_SimpleCalculator;
 
 import java.util.Scanner;
 

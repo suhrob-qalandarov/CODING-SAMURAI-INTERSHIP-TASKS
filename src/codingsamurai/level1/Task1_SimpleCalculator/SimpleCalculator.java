@@ -1,4 +1,4 @@
-package Task1_SimpleCalculator;
+package codingsamurai.level1.Task1_SimpleCalculator;
 
 import java.util.Scanner;
 
@@ -28,7 +28,8 @@ public class SimpleCalculator {
                 
                     ------------------ INFO -------------------
                      This calculator would be able to add,
-                     subtract, multiply and divide two numbers.""");
+                     subtract, multiply and divide two numbers."""
+        );
     }
 
     private static int mainMenu() {
