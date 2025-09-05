@@ -1,3 +1,4 @@
+package Task1_SimpleCalculator;
 
 public interface MathService {
     double add(double firstNumber, double secondNumber);

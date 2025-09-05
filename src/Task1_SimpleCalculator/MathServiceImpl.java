@@ -1,3 +1,4 @@
+package Task1_SimpleCalculator;
 
 public class MathServiceImpl implements MathService {
 
@@ -16,6 +17,7 @@ public class MathServiceImpl implements MathService {
         return firstNumber * secondNumber;
     }
 
+    @Override
     public double divide(double firstNumber, double secondNumber) {
         if (secondNumber == 0) {
             System.out.println("""
