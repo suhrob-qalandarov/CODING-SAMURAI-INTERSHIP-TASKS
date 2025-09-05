@@ -16,8 +16,7 @@ public class SimpleCalculator {
                      subtract, multiply and divide two numbers.""");
 
         while (true){
-            try {
-                System.out.print("""
+            chosenOperation = ScannerUtil.getIntDigit(scanner,"""
                         -------------------------------------------
                          1 - Add
                          2 - Subtract
@@ -26,72 +25,58 @@ public class SimpleCalculator {
                         -------------------------------------------
                          0 - Exit
                          Choose:\s"""
-                );
-                chosenOperation = Integer.parseInt(scanner.nextLine());
+            );
 
-                if (chosenOperation == 0) {
-                    System.out.println("""
+            if (chosenOperation == 0) {
+                System.out.println("""
                             -----------------
                              You logged out!
                             -----------------"""
-                    );
-                    return;
-                }
+                );
+                return;
+            }
 
-                if (chosenOperation < 1 || chosenOperation > 4) {
-                    System.out.println("""
+            if (chosenOperation < 1 || chosenOperation > 4) {
+                System.out.println("""
                             -!-
                             ⚠️ Invalid option! Please choose between 0–4.
                             -!-
                             """
-                    );
-                    continue;
-                }
+                );
+                continue;
+            }
 
-                String chosenOption = chosenOperation == 1 ? "Add"
-                        : chosenOperation == 2 ? "Subtract"
-                        : chosenOperation == 3 ? "Multiply"
-                        : "Divide";
+            String chosenOption = chosenOperation == 1 ? "Add"
+                    : chosenOperation == 2 ? "Subtract"
+                    : chosenOperation == 3 ? "Multiply"
+                    : "Divide";
 
-                System.out.printf("""
+            System.out.printf("""
                         
                         --------------------------
                          Chosen option: %s
-                        --------------------------
-                         Enter first number:\s""", chosenOption
-                );
-                firstNumber = Double.parseDouble(scanner.nextLine());
-                System.out.print(" Enter second number: ");
-                secondNumber = Double.parseDouble(scanner.nextLine());
+                        --------------------------""", chosenOption
+            );
+            firstNumber = ScannerUtil.getDoubleDigit(scanner, "\n Enter first number: ");
+            secondNumber = ScannerUtil.getDoubleDigit(scanner, " Enter second number: ");
 
-                try {
-                    switch (chosenOperation) {
-                        case 1 -> solution = mathService.add(firstNumber, secondNumber);
-                        case 2 -> solution = mathService.subtract(firstNumber, secondNumber);
-                        case 3 -> solution = mathService.multiply(firstNumber, secondNumber);
-                        case 4 -> solution = mathService.divide(firstNumber, secondNumber);
-                    }
+            try {
+                switch (chosenOperation) {
+                    case 1 -> solution = mathService.add(firstNumber, secondNumber);
+                    case 2 -> solution = mathService.subtract(firstNumber, secondNumber);
+                    case 3 -> solution = mathService.multiply(firstNumber, secondNumber);
+                    case 4 -> solution = mathService.divide(firstNumber, secondNumber);
+                }
 
-                    System.out.printf("""
+                System.out.printf("""
                             --
                              Result is: %s
                             ---------------------------
                             
                             """, solution
-                    );
-                } catch (ArithmeticException e) {
-                    System.out.println(" ⚠️ Error: " + e.getMessage() + "\n");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("""
-                        
-                        -!-
-                        ⚠️ Invalid input! Please enter a number.
-                        -!-
-                        """
                 );
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (ArithmeticException e) {
+                System.out.println(" ⚠️ Error: " + e.getMessage() + "\n");
             }
         }
     }
