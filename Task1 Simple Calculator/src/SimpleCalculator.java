@@ -6,25 +6,48 @@ public class SimpleCalculator {
         MathService mathService = new MathServiceImpl();
         int chosenOperation;
         double firstNumber, secondNumber, solution = 0;
-        while (true){
-            System.out.println("""
+
+        System.out.println("""
+                
                     ------------------ INFO -------------------
                      This calculator would be able to add,
-                     subtract, multiply and divide two numbers.
+                     subtract, multiply and divide two numbers.""");
+
+        while (true){
+            System.out.print("""
                     -------------------------------------------
                      1 - Add
                      2 - Subtract
                      3 - Multiply
                      4 - Divide
                     -------------------------------------------
+                     0 - Exit
                      Choose:\s"""
             );
             chosenOperation = Integer.parseInt(scanner.nextLine());
 
-            chosenOperation = scanner.nextInt();
+            if (chosenOperation == 0) {
+                System.out.println("""
+                        -----------------
+                         You logged out!
+                        -----------------"""
+                );
+                return;
+            }
 
-            System.out.print(" Enter first number: ");
-            firstNumber = scanner.nextDouble();
+            String chosenOption = (chosenOperation == 1) ? "Add"
+                    : (chosenOperation == 2) ? "Subtract"
+                    : (chosenOperation == 3) ? "Multiply"
+                    : (chosenOperation == 4) ? "Divide"
+                    : "Unknown";
+
+            System.out.printf("""
+                    
+                    --------------------------
+                     Chosen option: %s
+                    --------------------------
+                     Enter first number:\s""", chosenOption
+            );
             firstNumber = Double.parseDouble(scanner.nextLine());
             System.out.print(" Enter second number: ");
             secondNumber = Double.parseDouble(scanner.nextLine());
