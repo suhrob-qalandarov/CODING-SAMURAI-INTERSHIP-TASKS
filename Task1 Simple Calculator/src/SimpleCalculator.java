@@ -36,13 +36,14 @@ public class SimpleCalculator {
                 }
 
                 System.out.printf("""
-                        
-                        -------------------------------------------
+                        --
                          Result is: %s
+                        ---------------------------
                         
-                        %n""", solution);
+                        """, solution
+                );
             } catch (ArithmeticException e) {
-                System.out.println(" ⚠️ Error: " + e.getMessage());
+                System.out.println(" ⚠️ Error: " + e.getMessage() + "\n");
             }
         }
     }
