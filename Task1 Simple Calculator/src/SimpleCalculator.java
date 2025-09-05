@@ -19,13 +19,15 @@ public class SimpleCalculator {
                     -------------------------------------------
                      Choose:\s"""
             );
+            chosenOperation = Integer.parseInt(scanner.nextLine());
 
             chosenOperation = scanner.nextInt();
 
             System.out.print(" Enter first number: ");
             firstNumber = scanner.nextDouble();
+            firstNumber = Double.parseDouble(scanner.nextLine());
             System.out.print(" Enter second number: ");
-            secondNumber = scanner.nextDouble();
+            secondNumber = Double.parseDouble(scanner.nextLine());
 
             try {
                 switch (chosenOperation) {
