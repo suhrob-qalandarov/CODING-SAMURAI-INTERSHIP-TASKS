@@ -2,22 +2,21 @@
 public class MathServiceImpl implements MathService {
 
     @Override
-    public int add(double firstNumber, double secondNumber) {
-        return 0;
+    public double add(double firstNumber, double secondNumber) {
+        return firstNumber + secondNumber;
     }
 
     @Override
-    public int subtract(double firstNumber, double secondNumber) {
-        return 0;
+    public double subtract(double firstNumber, double secondNumber) {
+        return firstNumber - secondNumber;
     }
 
     @Override
-    public int multiply(double firstNumber, double secondNumber) {
-        return 0;
+    public double multiply(double firstNumber, double secondNumber) {
+        return firstNumber * secondNumber;
     }
 
-    @Override
-    public int divide(double firstNumber, double secondNumber) {
-        return 0;
+    public double divide(double firstNumber, double secondNumber) {
+        return firstNumber / secondNumber;
     }
 }
