@@ -27,19 +27,23 @@ public class SimpleCalculator {
             System.out.print(" Enter second number: ");
             secondNumber = scanner.nextDouble();
 
-            switch (chosenOperation) {
-                case 1 -> solution = mathService.add(firstNumber, secondNumber);
-                case 2 -> solution = mathService.subtract(firstNumber, secondNumber);
-                case 3 -> solution = mathService.multiply(firstNumber, secondNumber);
-                case 4 -> solution = mathService.divide(firstNumber, secondNumber);
-            }
+            try {
+                switch (chosenOperation) {
+                    case 1 -> solution = mathService.add(firstNumber, secondNumber);
+                    case 2 -> solution = mathService.subtract(firstNumber, secondNumber);
+                    case 3 -> solution = mathService.multiply(firstNumber, secondNumber);
+                    case 4 -> solution = mathService.divide(firstNumber, secondNumber);
+                }
 
-            System.out.printf("""
+                System.out.printf("""
                         
                         -------------------------------------------
                          Result is: %s
                         
                         %n""", solution);
+            } catch (ArithmeticException e) {
+                System.out.println(" ⚠️ Error: " + e.getMessage());
+            }
         }
     }
 }

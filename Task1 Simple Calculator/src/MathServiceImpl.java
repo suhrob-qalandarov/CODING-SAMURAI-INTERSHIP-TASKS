@@ -17,6 +17,21 @@ public class MathServiceImpl implements MathService {
     }
 
     public double divide(double firstNumber, double secondNumber) {
+        if (secondNumber == 0) {
+            System.out.println("""
+                ------------------------------
+                  Division rules:
+                 - a ÷ 0 (a ≠ 0) → Undefined
+                 - 0 ÷ 0 → Indeterminate
+                ------------------------------"""
+            );
+
+            if (firstNumber == 0) {
+                throw new ArithmeticException("Indeterminate form: 0 ÷ 0");
+            } else {
+                throw new ArithmeticException("Undefined: a ÷ 0 when a ≠ 0");
+            }
+        }
         return firstNumber / secondNumber;
     }
 }
