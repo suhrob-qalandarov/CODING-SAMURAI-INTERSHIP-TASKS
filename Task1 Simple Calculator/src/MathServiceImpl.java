@@ -19,11 +19,12 @@ public class MathServiceImpl implements MathService {
     public double divide(double firstNumber, double secondNumber) {
         if (secondNumber == 0) {
             System.out.println("""
-                ------------------------------
+                
+                -!-
                   Division rules:
                  - a ÷ 0 (a ≠ 0) → Undefined
                  - 0 ÷ 0 → Indeterminate
-                ------------------------------"""
+                -!-"""
             );
 
             if (firstNumber == 0) {
