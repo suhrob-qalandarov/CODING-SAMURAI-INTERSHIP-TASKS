@@ -1,4 +1,4 @@
-package codingsamurai.level1.Task1_SimpleCalculator;
+package Task1_SimpleCalculator;
 
 public interface MathService {
     double add(double firstNumber, double secondNumber);
